@@ -8,6 +8,7 @@ public class MainWindow extends JFrame {
         // размер поля
         setSize(320,345);// в пикселях
         setLocation(400,400); // располежение игры при запуске
+        add(new GameField());
         setVisible(true); // видимость экрана
     }
 
