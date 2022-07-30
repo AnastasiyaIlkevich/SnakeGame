@@ -79,12 +79,14 @@ public class GameField extends JPanel implements ActionListener {//Panel- эле
     public void checkApple() {
         ifContains = false;
         for (int i = 0; i < listAppleX.size(); i++) {
-            ifContains = listAppleX.indexOf(i) == x[0] && listAppleY.indexOf(i) == y[0];
+            if (!ifContains) {
+                ifContains = listAppleX.get(i) == x[0] && listAppleY.get(i) == y[0];
+            }
         }
         if (ifContains) {
             dots++;
-            listAppleX.remove(x[0]);
-            listAppleY.remove(y[0]);
+            listAppleX.remove((Integer) x[0]);
+            listAppleY.remove((Integer) y[0]);
             createApple();
         }
     }
@@ -94,7 +96,7 @@ public class GameField extends JPanel implements ActionListener {//Panel- эле
         super.paintComponent(graphics);
         if (inGame) {
             for (int i = 0; i < listAppleX.size(); i++) {
-                graphics.drawImage(apple, listAppleX.indexOf(i), listAppleY.indexOf(i), this);
+                graphics.drawImage(apple, listAppleX.get(i), listAppleY.get(i), this);
             }
             for (int i = 0; i < dots; i++) {
                 graphics.drawImage(dot, x[i], y[i], this);//this - значит отрисовку проводить здесь(в этом классе

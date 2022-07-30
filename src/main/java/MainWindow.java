@@ -6,8 +6,8 @@ public class MainWindow extends JFrame {
         setTitle("Snake Game"); //Это то что будет показано сверху окошка
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);// окончание работы (красный крестик)
         // размер поля
-        setSize(320,345);// в пикселях
-        setLocation(400,400); // располежение игры при запуске
+        setSize(350, 380);
+        setLocation(800, 400);
         add(new GameField());
         setVisible(true); // видимость экрана
     }
